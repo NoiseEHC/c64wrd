@@ -5,7 +5,7 @@ layout: default
 
 The most important thing to keep in mind is that this is **NOT** a credits database, we already [have one](https://csdb.dk), and there is no point duplicating the information available there. It would also make it unnecessarily hard to keep the two synced which would make this database quite sparse and incomplete.
 
-The presentation and information storage is quite basic as it has to be served on githut pages which does not support any custom server side code. So we just use Jekyll, and try to shoehorn everything into existing mechanisms instead.
+The presentation and information storage is quite basic as it has to be served on github pages which does not support any custom server side code. So we just use Jekyll, and try to shoehorn everything into existing mechanisms instead.
 
 ## Categories
 
@@ -20,7 +20,7 @@ For example "graffity" is the demo group, "justinblue" is the demo, these will b
 
 It is very important to keep these group/demo/part names "slugified", which means that do not have spaces or special characters in them ("for example "comalight3"). If necessary use the short name of the group (for example "trsi") if exists, and use lowercase all the time, as these will be filenames and urls. If the name have a space and there is no short name (for example "Genesis Project") then use dash like "genesis-project". In demo names do not include the percentage (for example "99%") or similar.
 
-In case the demo is a coproduction and only one group contributed code records (notable effects) then treat it as a non-coproduction (for example the other group are music composers). If more than one group contributed code records then decide yourself which top level directory you put the demo under (for example "/oxyron/censor-design/comaland/2015-06-20-plotballs.md"). Please **DO NOT** create a new pseudo-group for example "censor-design+oxyron", as that would ruin filtering.
+In case the demo is a coproduction and only one group contributed code records (notable effects) then treat it as a non-coproduction (for example the other group are music composers). If more than one group contributed code records then decide yourself which top level directory you put the demo under (for example "/oxyron/censor-design/comaland" vs "/censor-design/oxyron/comaland"). Please **DO NOT** create a new pseudo-group for example "censor-design+oxyron", as that would ruin filtering.
 
 Note that you cannot overwrite categories later in the front-matter (beginning section of the .md files), as a line like "categories: a b c" puts a, b and c at the end of the category list created from directory names and that would mess up group/demo rendering.
 
@@ -30,7 +30,7 @@ You have to put the effects of the part into the front-matter (for example "tags
 
 Create more specific effect tags **ONLY** when there are at least 20 entries for an already existing tag. If you do this then it is your responsibility to update **ALL** the already existing entries to have your new shiny effect tag if it applies to them.
 
-How to name effects and what is and is not in the effect category is highly subjective, discuss it in the CSDb forum before starting a flamewar.
+How to name effects and what is and is not in the effect category is highly subjective, discuss it in the CSDb forum before starting a flamewar. Note that while we try not to judge demo parts, it is not possible to avoid that: it happens when you decide that an effect is so commonplace that it is now a "filler" part, while some time ago it was considered a notable effect. Another judgment happens because the same effect can be used for differently looking things (for example the colorcycling with animated bitmaps is used in like hundreds of different parts, and some of them look different), and it is quite subjective whether it is considered the same effect or a different one. Unfortunately we have to draw the line somewhere not to flood this database with only that one effect, but on the other hand it could be also argued that almost all VIC effects are just $d011 changing code, and so that they are all the same.
 
 Do not create a "filler" or "powerpoint" or similar tag even if it would sound funny, if a demo part is just an animation either leave it out completely or give it no tag at all. Also skip rasters+logo+scroll or similar parts in old demos, the goal is not to collect all the parts, but instead collect all the effects and records.
 
@@ -53,13 +53,13 @@ fps: 50
 tags: plotter plotter-3d plotter-3d-hires
 ---
 ```
-The "date:" has to be duplicated here unfortunately (it comes from the filename automatically), because we have to overwrite the hours (" 20" here) to have a monotonically decreasing number starting from the intro which should have "23". If the demo has more than 24 parts then you can use minutes here as well (for example "23:59"). The reason for this is that we want to have demos sorted by year in a way that the most recents are on the top, but also want to have the demo parts together in a way that the intro is at the top.
+The "date:" has to be duplicated here unfortunately (it comes from the filename automatically), because we have to overwrite the hours (" 20" here) to have a monotonically decreasing number starting from the intro which should have "23". If the demo has more than 24 parts then you can use minutes here as well (for example "23:59"). The reason for this is that we want to have demos sorted by year in a way that the most recent ones are on the top, but also want to have the demo parts together in a way that the intro is at the top.
 
 The "title:" is the non-"slugified" demo part name, you can use any text here and spaces or other characters as well.
 
 The "csdb:" number is the release id on CSDb where you can download the demo itself (the same in all parts).
 
-The "coders:" part is a YAML array, where every coder who worked on that part gets two lines. The "space_space-space_name:" is the string which will be displayed in the web pages. The "space_space_space_space_csdb:" number is the CSDb scener id. Note that the number of spaces is very important in YAML!
+The "coders:" part is a YAML array, where every coder who worked on that part gets two lines. The "SpaceSpace-SPACEname:" is the string which will be displayed in the web pages. The "SpaceSpaceSpaceSPACEcsdb:" number is the CSDb scener id. Note that the number of spaces is very important in YAML!
 
 The "record:" part is optional information for single numeric things like the number of sprites in a multiplexer or the number of dots in this example.
 
@@ -81,8 +81,8 @@ Hires XY with zoom plotter ball drawn into sprites roll down over the background
 ```
 The image has to be uploaded to the demo's directory, and you can reference it by putting the "/c64wrd" string in front of the link. Give some meaningful name for "alt" tag.
 
-The short description has to be short enough to fit into filtered lists, where the first image in the post is used at 30% maximum width and that determines the row's height. The short description ends at the "<!--more-->" string.
+The short description has to be short enough to fit into filtered lists, where the first image in the post is used at 30% maximum width and that determines the row's height. The short description ends at the "\<!--more-->" string.
 
 Then you can have more screenshots and a longer description. Note that if you are the author of the part and you cannot really describe why it is better or different than the other similar ones, then it is probably just a "filler" part.
 
-For screenshots I used VICE PAL emulation screenshots (as PAL emulation does not work with media snapshots in VICE), then cropped the images not to include the VICE GUI and some empty border. Then when I realized that the size of these images is arbitrary (based on you VICE window size), I had to make VICE media snapshots as well to determine the effect size. But this is clearly a waste of time so it is entirely up to you how much time do you want to spend on that (for example for "plotballs.png" I just used the C64 Debugger screenshot feature).
+For screenshots I used windows screenshots of the VICE application running with PAL emulation (as PAL emulation does not work with media snapshots in VICE), then cropped the images not to include the VICE GUI and removed some empty border. Then when I realized that the size of these images is arbitrary (based on your VICE window size), I had to make VICE media snapshots as well to determine the effect size. But this is clearly a waste of time so it is entirely up to you how much time do you want to spend on that (for example for "plotballs.png" I just used the C64 Debugger screenshot feature).
