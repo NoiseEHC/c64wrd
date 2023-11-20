@@ -46,7 +46,7 @@
 
       {% for tag in sorted_tags %}
       {% assign tag_slug = tag | slugify: "raw" %}
-      <a class="tag-link" href={{ "/effect/" | append: tag_slug | append: ".html" | relative_url }} rel="tag">
+      <a class="tag-link" href={{ "/effect/" | append: tag_slug | append: "/" | relative_url }} rel="tag">
         #{{ tag }}
       </a>
       {% endfor %}
@@ -54,6 +54,7 @@
     {% endif %}
 
   </div>
+  {% include footer.html %}
   <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 </body>
 

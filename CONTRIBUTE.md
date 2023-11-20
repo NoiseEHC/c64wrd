@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Contribution Guide
 
 The most important thing to keep in mind is that this is **NOT** a credits database, we already [have one](https://csdb.dk), and there is no point duplicating the information available there. It would also make it unnecessarily hard to keep the two synced which would make this database quite sparse and incomplete.
@@ -19,15 +22,13 @@ It is very important to keep these group/demo/part names "slugified", which mean
 
 In case the demo is a coproduction and only one group contributed code records (notable effects) then treat it as a non-coproduction (for example the other group are music composers). If more than one group contributed code records then decide yourself which top level directory you put the demo under (for example "/oxyron/censor-design/comaland/2015-06-20-plotballs.md"). Please **DO NOT** create a new pseudo-group for example "censor-design+oxyron", as that would ruin filtering.
 
-Note that you cannot overwrite categories later in the front-matter (beginning section of the .md files), as a line like "categories: a b c" puts a, b and c at the end of the category list created from directory names and that would mess up group/demo rendering and linking.
-
-You have to put the demo group's name and the demo's name into the appropriate files in "/demo" and "/group" otherwise Jekyll does not generate the filtered html file and the links to the group/demo will not work. (See "group\graffity.md" and "demo\justinblue.md" what information you need in the file - is is just the "category:" line.)
+Note that you cannot overwrite categories later in the front-matter (beginning section of the .md files), as a line like "categories: a b c" puts a, b and c at the end of the category list created from directory names and that would mess up group/demo rendering.
 
 ## Tags
 
 You have to put the effects of the part into the front-matter (for example "tags: chessboard chessboard-zoomer") as tags. All tag names must be "slugified", lowercase and single word (for example "bitmapstretch"). Then create more specific effect tags by joining the broader effect category (here "chessboard") and the more specific word (here "zoomer") into a tagname (here "chessboard-zoomer"), and include **BOTH** the broad and narrow tagname in the front-matter. The reason for this is that we want to find that demo part when browsing the database, and it is better to include it more than once.
 
-Create more specific effect tags **ONLY** when there are at least 20 entries for an already existing tag. If you do this then it is your responsibility to update **ALL** the already existing entries to have your new shiny effect tag if it applies to them. In this case you have to create the appropriate .md file in "/effect" as well, otherwise Jekyll does not generate the filtered html file and the links to the effect will not work.
+Create more specific effect tags **ONLY** when there are at least 20 entries for an already existing tag. If you do this then it is your responsibility to update **ALL** the already existing entries to have your new shiny effect tag if it applies to them.
 
 How to name effects and what is and is not in the effect category is highly subjective, discuss it in the CSDb forum before starting a flamewar.
 

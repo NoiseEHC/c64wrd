@@ -4,6 +4,7 @@ permalink: none
 baseurl: /c64wrd/
 plugins:
 - jekyll-remote-theme
+- jekyll-archives
 defaults:
   -
     scope:
@@ -11,3 +12,16 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       layout: "post"
+jekyll-archives:
+  enabled:
+  - year
+  - month
+  - categories
+  - tags
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/effect/:name/'
+    category: '/category/:name/'

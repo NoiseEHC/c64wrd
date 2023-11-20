@@ -30,12 +30,7 @@
         {% for i in (1..page.categories.size) %}
         {% assign index = i | minus: 1 %}
         {% assign category_slug = page.categories[index] | slugify: "raw" %}
-        {% if i != page.categories.size %}
-        {% assign category_folder = "/group/" %}
-        {% else %}
-        {% assign category_folder = "/demo/" %}
-        {% endif %}
-        <a class="tag-link" href={{ category_folder | append: category_slug | append: ".html" | relative_url }}
+        <a class="tag-link" href={{ "/category/" | append: category_slug | append: "/" | relative_url }}
           rel="tag">
           {{ page.categories[index] }}
         </a>
@@ -65,7 +60,7 @@
     <section>
       {% for tag in page.tags %}
       {% assign tag_slug = tag | slugify: "raw" %}
-      <a class="tag-link" href={{ "/effect/" | append: tag_slug | append: ".html" | relative_url }} rel="tag">
+      <a class="tag-link" href={{ "/effect/" | append: tag_slug | append: "/" | relative_url }} rel="tag">
         #{{ tag }}
       </a>
       {% endfor %}
